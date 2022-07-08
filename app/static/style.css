@@ -1,0 +1,327 @@
+html,body{
+    height:100%;
+}
+
+body {
+	/* background-color: #7c7ef8; */
+    font-family: 'Roboto', sans-serif;
+    /* display: flex; */
+	padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    /* flex-direction: column;
+    min-height: 100vh; */
+}
+
+/* contains flex box of left column and right column */
+.container{
+    /* flex:1; */
+    display:flex;
+    flex-direction: row;
+    min-width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+}
+
+/* quick notes padding */
+#quick-todo{
+    padding-left:20px;
+    padding-right:20px;
+}
+
+/* all buttons in Quick Notes */
+.text-button{
+    /* border:none;
+    outline:none; */
+    width:30px;
+    height:30px;
+    cursor:pointer;
+    
+}
+
+/* allow buttons to appear next to one another */
+.align-btn-group,.change-text-btn-group,
+.list-btn-group{
+    display:inline;
+}
+
+/* text area in Quick Notes */
+#output{
+    width:100%;
+    height:270px;
+    border: 1px solid #111;
+}
+
+/* when active, make border of button crimson */
+.text-button.active, .text-button:active{
+    border: 1px solid crimson;
+    border-radius:2px;
+}
+
+/* margin for Quick Notes button area */
+form{
+    margin:10px 0;
+}
+/* iframe{
+    width:100%;
+} */
+
+/* left column Flexbox property */
+/* by setting height property
+to 100vh, changing the size of notes isn't 
+increasing page length any more */
+#current-day-info {
+    width:25%;
+    /* text-align:center; */
+    /* background: #1b19cd; */
+    /* color:white;
+    height:100%; */
+    /* font-size: 1.7vmin; */
+    /* overflow: scroll; */
+    display:flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* calendar flex-box width */
+#calendar{
+    width:75%;
+    height: 100vh;
+}
+
+/* allows flex boxes of left column to grow and shrink */
+.box{
+    box-sizing: border-box;
+    flex:1 1 auto;
+}
+
+/* current day info window */
+#top{
+    background: #1b19cd;
+    overflow:scroll;
+    text-align:center;
+    height:50%;
+    color:white;
+    resize:vertical;
+}
+
+/* quick notes window  */
+#bottom{
+    background:lightyellow;
+    color:black;
+    overflow:scroll;
+    /* resize:vertical; */
+    height:50%;
+    /* background:black;
+    color:white; */
+}
+
+/* #current-day-info button{
+    font-size: 1.7vmin;
+} */
+
+.divider{
+    margin-bottom:33px;
+    border-bottom: 1.85px solid white;
+}
+
+/* showing time */
+#time{
+    /* font-size: 2vh; */
+    font-size: 20px;
+    text-shadow: 0px 0px 15px aliceblue;
+    margin-bottom: 20px;
+}
+
+#time span{
+    font-weight: bolder;
+}
+
+/* #quick-todo{
+    width:25%;
+    height:50%;
+    text-align: center;
+    overflow: scroll;
+}
+
+#quick-todo h1{
+    position: relative;
+    top:10px;
+} */
+
+
+table,
+td {
+	border: 1px solid #23232324;
+    cursor: copy;
+}
+
+tr{
+    cursor: default;
+}
+
+/* calendar property */
+table{
+    margin: 14px auto;
+    padding: 0.5vh 0.5vh;
+    border-collapse: collapse;
+    box-shadow: 0px 0px 149px -28px #1b19cdd1;
+    border-radius: 20px;
+    overflow:hidden;
+    -moz-overflow:hidden;
+    border-color: transparent;
+}
+
+
+
+/* month and left and right arrows */
+#selector{
+	display: flex;
+	align-content: center;
+	justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#cal-year{
+    font-size:30px;
+    margin:5px;
+}
+
+#cal-month{
+    font-size: 35px;
+    margin:10px;
+    margin-left:20px;
+    margin-right:20px;
+    align-items: center;
+}
+
+#calendar-header{
+    background: #1b19cd;
+    color: white;
+}
+
+#calendar-days{
+    background: #1b19cd;
+    color: white;
+    font-size: 26px;
+    font-weight: lighter;
+}
+
+.weekday{
+    /* padding-left:55px;
+    padding-right:55px; */
+    padding-left:3.3vw;
+    padding-right:3.3vw;
+    border-color: white;
+}
+
+td{
+    /* height: 129px; */
+    height: 13vh;
+    font-size:24px;
+    font-weight: 900;
+    vertical-align: top;
+    padding:10px;
+    box-sizing: border-box;
+    border: 1px solid #cfcfcf;
+}
+
+.fa-caret-left,.fa-caret-right{
+    font-size: 40px;
+}
+
+
+/* this fixes the size of the cal-month so 
+that when we are changing the month the 
+position of the left and right button doesn't change */
+#month-container{
+    width:100px;
+}
+
+span{
+    display:inline-block; 
+    height:30px; 
+    width:30px; 
+    text-align: center;
+}
+
+
+:root {
+    --lightgray: #efefef;
+    --darkgray: #807e7e;
+    --blue: steelblue;
+    --white: #fff;
+    --black: rgba(0, 0, 0, 0.8);
+    --bounceEasing: cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  }
+
+.modal{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    /* right: 0;
+    bottom: 0; */
+    width:450px;
+    height:250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: var(--black);
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.modal-dialog{
+    position: relative;
+    width: 450px;
+    height: 250px;
+    border-radius: 5px;
+    background: var(--white);
+    cursor: default;
+}
+
+.modal-header{
+    box-sizing: border-box;
+    border-radius: 5px;
+    overflow:auto;
+    background: var(--lightgray);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    
+}
+
+.modal-header .close-modal{
+    font-size: 1.5rem;
+}
+
+.modal-content{
+    padding:15px;
+}
+
+.modal.is-visible{
+    opacity:1;
+    visibility: visible;
+    padding:0;
+    border-radius: 5px;
+    border:small solid black;
+    box-shadow: 0px 0px 13px 5px var(--darkgray);
+}
+
+.close-modal{
+    cursor: pointer;
+}
+
+.modal-date div{
+    display: inline-block;
+}
+
+.modal-header:nth-child(2){
+    margin-left: 10px;
+}
+
